@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+</head>
+<body>
+    <form id="loginForm">
+        <label>Enter Username: </label>
+        <input type="text" id="username"> <br>
+        <label>Enter Password: </label>
+        <input type="password" id="password"> <br>
+        <input type="submit" value="Log-in">
+        <input type="button" value="Sign-Up">
+    </form>
+
+    <script>
+        // Hardcoded username and password for validation
+        const user = "Admin";
+        const pass = "Admin";
+
+        // Handle form submission
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting and refreshing the page
+
+            // Get the input values
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // Validate the credentials
+            if (username === user && password === pass) {
+                alert("Hello, user!");
+                // Optionally redirect to another page (replace with your URL)
+                window.location.href = "index1.html"; // Redirects to index.html
+            } else if (username === "" || password === "") {
+                alert("Please enter both username and password.");
+            } else {
+                alert("Invalid Username or Password.");
+            }
+        });
+    </script>
+</body>
+</html>
